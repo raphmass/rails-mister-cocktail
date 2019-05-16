@@ -1,0 +1,10 @@
+ADD A DOSE
+** FORM **
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :cocktail %>
+  <%= f.association :ingredient %>
+  <%= f.button :submit %>
+  <%= f.submit "Add a dose", class: "btn btn-primary" %>
+<% end %>
