@@ -1,25 +1,24 @@
 <h1>Cocktail:<%= @cocktail.name %></h1>
 
-<p><strong>Description:</strong></p>
+<div class="container" style="border-style: dotted;">
 
-<% @cocktail.doses.each do |dose| %>
-	<ul>
-		<li>
-	      <%= dose.description %>
-	      <%= " of " %>
-	      <%= dose.ingredient.name %>
-	     </li>
-     </ul>
-  <% end %>
+	<p><strong>Description:</strong></p>
 
+	<% @cocktail.doses.each do |dose| %>
+		<ul>
+			<li>
+		      <%= dose.description %>
+		      <%= " of " %>
+		      <%= dose.ingredient.name %>
+		     </li>
+	     </ul>
+	  <% end %>
 
-<p><strong>Commands:</strong></p>
+	<p><strong>Commands:</strong></p>
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
-<p></p>
+	<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+	<p></p>
 
+	<%= link_to "Back to cocktails list", cocktails_path  %>
 
-
-
-
-<%= link_to "Back to cocktails list", cocktails_path  %>
+</div>

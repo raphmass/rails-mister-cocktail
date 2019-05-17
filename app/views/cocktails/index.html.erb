@@ -1,9 +1,21 @@
 <h1>All cocktails:</h1>
 
-<% @cocktails.each do |cocktail| %>
-	<p><strong>Cocktail:</strong> <%= link_to cocktail.name, cocktail  %>  </p>
-<% end %>
+	<%= cl_image_tag("cocktails_landing",
+      width: 400, height: 300, crop: :fill) %>
 
-<p></p>
 
-<%= link_to "Add a cocktail", new_cocktail_path(@cocktail)  %>
+<p>TODO : faire le lien vers les photos des cocktails (uploadées)</p>
+
+<div class="container" style="border-style: dotted;">
+	
+	<% @cocktails.each do |cocktail| %>
+		<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+		  <%= link_to cocktail.name, cocktail  %>
+		</div>
+	<% end %>
+
+	<div class="btn-primary text-center">
+		<%= link_to "Add a cocktail", new_cocktail_path(@cocktail)  %>
+	</div>
+</div>
+
